@@ -98,45 +98,59 @@ async function requestPortal(payload){
   const base = `${normNameHash(payload.nome)}|${String(payload.nascimento||'').trim()}|${normCodeHash(payload.codigo)}`;
   const authHash = await sha256Hex(base);
 
-  return new Promise((resolve,reject)=>{
-    const cb = '__evePortalCb_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
-    const script = document.createElement('script');
-    let finished = false;
-
-    const cleanup=()=>{
-      if(finished) return;
-      finished=true;
-      clearTimeout(timer);
-      try{delete window[cb]}catch(e){window[cb]=undefined}
-      script.remove();
-    };
-
-    window[cb] = data => {
-      cleanup();
-      const p = data || {};
-      if(p.ok) resolve(p);
-      else reject(new Error(p.error || 'Não foi possível liberar o acesso.'));
-    };
-
-    script.onerror = () => {
-      cleanup();
-      reject(new Error('Não foi possível conectar à Central. Atualize a página e tente novamente.'));
-    };
-
-    const q = new URLSearchParams({
-      action:'portal_acesso_hash',
-      auth_hash:authHash,
-      callback:cb,
-      _:String(Date.now())
-    });
-    script.src = SCRIPT_URL + '?' + q.toString();
-    document.head.appendChild(script);
-
-    const timer=setTimeout(()=>{
-      cleanup();
-      reject(new Error('A Central demorou para responder. Atualize a página e tente novamente.'));
-    },20000);
+  const q = new URLSearchParams({
+    action:'portal_acesso_hash',
+    auth_hash:authHash,
+    _:String(Date.now())
   });
+  const endpoint = SCRIPT_URL + '?' + q.toString();
+
+  try{
+    const r = await fetch(endpoint,{
+      method:'GET',
+      cache:'no-store',
+      redirect:'follow'
+    });
+
+    if(!r.ok) throw new Error('HTTP '+r.status);
+
+    const data = await r.json();
+
+    if(data && data.ok) return data;
+
+    throw new Error((data && data.error) || 'Não foi possível liberar o acesso.');
+  }catch(fetchErr){
+    return new Promise((resolve,reject)=>{
+      const cb='evePortal_'+Date.now()+'_'+Math.floor(Math.random()*99999);
+      const script=document.createElement('script');
+      const timer=setTimeout(()=>finish(new Error('Tempo limite ao consultar a Central.')),15000);
+
+      function finish(err,val){
+        clearTimeout(timer);
+        try{delete window[cb]}catch(e){window[cb]=undefined}
+        try{script.remove()}catch(e){}
+        err ? reject(err) : resolve(val);
+      }
+
+      window[cb]=data=>{
+        if(data && data.ok) finish(null,data);
+        else finish(new Error((data && data.error) || 'Não foi possível liberar o acesso.'));
+      };
+
+      const qp = new URLSearchParams({
+        action:'portal_acesso_hash',
+        auth_hash:authHash,
+        callback:cb,
+        _:String(Date.now())
+      });
+
+      script.src = SCRIPT_URL + '?' + qp.toString();
+      script.onerror = ()=>finish(new Error(
+        'Não foi possível conectar à Central. Atualize a página e tente novamente.'
+      ));
+      document.head.appendChild(script);
+    });
+  }
 }
 
 $('#loginForm').addEventListener('submit', async e=>{
