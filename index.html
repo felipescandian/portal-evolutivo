@@ -81,28 +81,61 @@ let currentData = null;
 let currentWeekIndex = 0;
 let isDemo = false;
 
-function requestPortal(payload){
+async function sha256Hex(text){
+  const data = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+function normNameHash(v){
+  return String(v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();
+}
+function normCodeHash(v){
+  return String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'').trim();
+}
+
+async function requestPortal(payload){
+  const base = `${normNameHash(payload.nome)}|${String(payload.nascimento||'').trim()}|${normCodeHash(payload.codigo)}`;
+  const authHash = await sha256Hex(base);
+
   return new Promise((resolve,reject)=>{
-    const requestId = 'PORTAL-' + Date.now() + '-' + Math.random().toString(36).slice(2,9);
-    const frameName = 'portal_frame_' + requestId.replace(/[^a-z0-9_]/gi,'');
-    const iframe = document.createElement('iframe');
-    iframe.name = frameName; iframe.style.display='none';
-    const form = document.createElement('form');
-    form.method='POST'; form.action=SCRIPT_URL; form.target=frameName; form.style.display='none';
-    const fields = {action:'portal_acesso',transport:'iframe',request_id:requestId,payload:JSON.stringify(payload)};
-    Object.entries(fields).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=v;form.appendChild(i)});
-    const cleanup=()=>{window.removeEventListener('message',onMessage);clearTimeout(timer);setTimeout(()=>{iframe.remove();form.remove()},50)};
-    const onMessage = ev => {
-      const msg = ev.data;
-      if(!msg || msg.source!=='central_evolutivo' || msg.type!=='portal_access_result' || msg.request_id!==requestId) return;
-      cleanup();
-      const p = msg.payload || {};
-      if(p.ok) resolve(p); else reject(new Error(p.error || 'Não foi possível liberar o acesso.'));
+    const cb = '__evePortalCb_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+    const script = document.createElement('script');
+    let finished = false;
+
+    const cleanup=()=>{
+      if(finished) return;
+      finished=true;
+      clearTimeout(timer);
+      try{delete window[cb]}catch(e){window[cb]=undefined}
+      script.remove();
     };
-    window.addEventListener('message',onMessage);
-    document.body.appendChild(iframe); document.body.appendChild(form);
-    const timer=setTimeout(()=>{cleanup();reject(new Error('A Central demorou para responder. Confira sua conexão e tente novamente.'))},20000);
-    form.submit();
+
+    window[cb] = data => {
+      cleanup();
+      const p = data || {};
+      if(p.ok) resolve(p);
+      else reject(new Error(p.error || 'Não foi possível liberar o acesso.'));
+    };
+
+    script.onerror = () => {
+      cleanup();
+      reject(new Error('Não foi possível conectar à Central. Atualize a página e tente novamente.'));
+    };
+
+    const q = new URLSearchParams({
+      action:'portal_acesso_hash',
+      auth_hash:authHash,
+      callback:cb,
+      _:String(Date.now())
+    });
+    script.src = SCRIPT_URL + '?' + q.toString();
+    document.head.appendChild(script);
+
+    const timer=setTimeout(()=>{
+      cleanup();
+      reject(new Error('A Central demorou para responder. Atualize a página e tente novamente.'));
+    },20000);
   });
 }
 
