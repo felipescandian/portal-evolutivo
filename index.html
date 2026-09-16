@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#050505">
-<title>Portal Evolutivo Esportes — Formação esportiva infantil V3</title>
+<title>Portal Evolutivo Esportes — Área da Família V4.1</title>
 <style>
 :root{
   --bg:#050505;--bg2:#0a0a0b;--card:#101012;--card2:#151516;--gold:#d5aa43;--gold2:#f1cf78;
@@ -380,6 +380,26 @@ body.landing-mode .foot{display:none}
 .landingDefinition[data-landing-info]{cursor:pointer;transition:.18s ease}
 .landingDefinition[data-landing-info]:hover{transform:translateY(-1px);border-color:rgba(230,187,75,.8)}
 
+
+/* ===== PORTAL V4.1 — GOLS + CONTEXTOS DO TREINO ===== */
+.evoMetrics{grid-template-columns:repeat(6,1fr)}
+.evoMetric.goalMetric{border-color:rgba(61,196,118,.34);background:linear-gradient(180deg,rgba(41,196,118,.08),#090b0c)}
+.evoMetric.goalMetric .evoMetricIcon,.evoMetric.goalMetric .evoMetricValue{color:#67dfa0}
+.evoContextSection{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:9px;margin-top:8px}
+.evoContextCard,.evoGoalsCard{border:1px solid var(--evo-border);background:#090b0c;border-radius:8px;padding:12px}
+.evoContextHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.evoContextHeader h2{margin:0;font-size:16px}.evoContextHeader p{margin:3px 0 0;color:#8f8a81;font-size:9px;line-height:1.45;max-width:720px}
+.ctxLegend{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:#aaa49a;font-size:9px;white-space:nowrap}.ctxLegend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}.ctxLegend .ath{background:#e2b94f}.ctxLegend .grp{background:#cbd1d7}
+.ctxRows{display:grid;gap:9px}.ctxRow{display:grid;grid-template-columns:108px 1fr 56px;gap:9px;align-items:center}.ctxName{font-size:10px;font-weight:900;color:#e7e3da}.ctxBars{display:grid;gap:4px}.ctxTrack{height:12px;background:#121619;border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.06)}.ctxFill{height:100%;border-radius:999px;min-width:0}.ctxFill.ath{background:linear-gradient(90deg,#9b6b17,#e2b94f)}.ctxFill.grp{background:linear-gradient(90deg,#757d83,#cbd1d7)}.ctxPct{text-align:right;font-size:9px;color:#aaa49a}.ctxPct b{display:block;color:#f0cc69;font-size:10px}.ctxEmpty{padding:22px;text-align:center;color:#8f897f;font-size:10px;border:1px dashed rgba(213,168,63,.22);border-radius:8px}
+.ctxPhaseGrid{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:7px;margin-top:9px;overflow:auto;padding-bottom:2px}.ctxPhase{border:1px solid rgba(213,168,63,.24);background:linear-gradient(180deg,#101214,#080a0b);border-radius:8px;padding:10px;min-width:150px}.ctxPhase h3{margin:0 0 8px;color:#f0ca63;font-size:11px}.ctxPhaseCompare{display:grid;grid-template-columns:1fr 1fr;gap:7px}.ctxSide{border:1px solid rgba(255,255,255,.07);background:#0b0d0e;border-radius:6px;padding:7px}.ctxSide b{display:block;color:#f3f0e9;font-size:9px;margin-bottom:5px}.ctxSide span{display:block;color:#9d978d;font-size:8px;line-height:1.55}.ctxSide strong{color:#f0cd69;font-size:10px}.ctxSide.group strong{color:#d8dde1}
+.evoGoalsCard{display:flex;flex-direction:column}.goalTotal{display:flex;align-items:end;justify-content:space-between;gap:10px;padding:7px 0 12px;border-bottom:1px solid rgba(255,255,255,.07)}.goalBig b{font-size:38px;line-height:1;color:#65dc9d}.goalBig span{display:block;color:#8e897f;font-size:8px;margin-top:5px;text-transform:uppercase;letter-spacing:.08em}.goalClass{text-align:right}.goalClass b{display:block;color:#d5d8da;font-size:18px}.goalClass span{color:#858078;font-size:8px}.goalPhaseList{display:grid;gap:7px;margin-top:11px}.goalPhase{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.055)}.goalPhase:last-child{border-bottom:0}.goalPhaseName{font-size:9px;color:#d9d5cc}.goalPhaseVals{font-size:9px;color:#8d887f;text-align:right}.goalPhaseVals b{color:#68dda0;font-size:13px;margin-right:6px}.goalNote{margin-top:auto;padding-top:10px;color:#77736c;font-size:8px;line-height:1.45}
+.weekContextWrap{display:grid;gap:9px;margin-top:8px}.weekContextHead{border:1px solid var(--evo-border);background:#090b0c;border-radius:8px;padding:11px;display:flex;justify-content:space-between;gap:12px;align-items:center}.weekContextHead h3{margin:0;font-size:14px}.weekContextHead span{color:#918b82;font-size:9px}.weekMetrics{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}.weekMetric{border:1px solid rgba(255,255,255,.08);background:#0b0d0e;border-radius:7px;padding:8px;text-align:center}.weekMetric b{display:block;color:#efca68;font-size:16px}.weekMetric span{display:block;color:#827d75;font-size:7px;text-transform:uppercase;letter-spacing:.05em;margin-top:3px}.weekMetric.goal b{color:#65dc9d}
+.weekPhaseGrid{display:grid;grid-template-columns:repeat(5,minmax(145px,1fr));gap:7px;overflow:auto}.weekPhaseCard{min-width:145px;border:1px solid rgba(213,168,63,.25);background:#090b0c;border-radius:7px;padding:9px}.weekPhaseCard h4{margin:0 0 7px;color:#f0ca63;font-size:10px}.weekPhaseCard .athleteLine,.weekPhaseCard .groupLine{font-size:8px;line-height:1.6;color:#9c968c}.weekPhaseCard strong{color:#f0cd69}.weekPhaseCard .groupLine strong{color:#d8dde1}.weekPhaseCard .goalVal{color:#62db9a}
+.contextDisclosure{color:#77736c;font-size:8px;line-height:1.5;margin-top:7px}
+@media(max-width:1100px){.evoMetrics{grid-template-columns:repeat(3,1fr)}.evoContextSection{grid-template-columns:1fr}.ctxPhaseGrid,.weekPhaseGrid{grid-template-columns:repeat(5,160px)}.weekMetrics{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.evoMetrics{grid-template-columns:repeat(2,1fr)}.evoMetric:last-child{grid-column:auto}.ctxRow{grid-template-columns:86px 1fr 48px}.ctxPhaseGrid,.weekPhaseGrid{grid-template-columns:repeat(5,145px)}.weekMetrics{grid-template-columns:repeat(2,1fr)}.weekContextHead{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.ctxRow{grid-template-columns:76px 1fr 42px}.ctxName{font-size:9px}.evoContextHeader{display:block}.ctxLegend{margin-top:7px}.goalBig b{font-size:32px}}
+
 </style>
 </head>
 <body class="landing-mode">
@@ -572,6 +592,7 @@ function showGlossaryDetail(c){
   if(!c)return; const box=$('#glossaryDetail');box.style.display='block';box.innerHTML=`<div class="kicker">${esc(momentName(c.moment))}</div><h3>${esc(c.name)}</h3><p><b style="color:#f1cf78">O que é?</b><br>${esc(c.parent)}</p><p><b style="color:#f1cf78">Por que treinamos?</b><br>${esc(c.why)}</p><p><b style="color:#f1cf78">O que observar no jogo?</b><br>${esc(c.observe)}</p>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})
 }
 
+// Portal V4.1: compatível com Central Evolutivo V8.0 (gols + contextos)
 let currentData = null;
 let currentWeekIndex = 0;
 let isDemo = false;
@@ -655,17 +676,33 @@ $('#demoBtn').addEventListener('click',()=>{
 
 function demoData(){
   const weeks=[
-    ['Pós-perda','Reagir rapidamente após perder a posse e proteger o centro.',10.8,8.6,2,2,100,12,1,1,0],
-    ['Drible','Reconhecer espaço para superar o adversário em ação individual.',12.9,10.1,2,2,100,14,2,1,0],
-    ['Marcação','Ajustar distância, orientação corporal e tempo de aproximação.',11.7,9.8,2,2,100,13,1,2,0],
-    ['Passe sob pressão','Manter qualidade do passe com menor tempo para decidir.',14.6,10.8,2,2,100,15,2,1,0],
-    ['Finalização','Selecionar melhor gesto e zona de finalização.',11.2,9.5,2,1,50,11,1,0,1],
-    ['Cobertura defensiva','Dar suporte ao companheiro e proteger espaço vulnerável.',16.0,10.7,2,2,100,16,2,1,0],
-    ['Mobilidade ofensiva','Criar linha de passe e ocupar espaços com melhor timing.',13.8,10.2,2,2,100,14,1,2,0],
-    ['Tomada de decisão','Escolher com mais rapidez entre conduzir, passar ou finalizar.',12.7,9.7,2,2,100,13,2,2,0]
+    ['Pós-perda','Reagir rapidamente após perder a posse e proteger o centro.',10.8,8.6,2,2,100,12,1,1,0,1],
+    ['Drible','Reconhecer espaço para superar o adversário em ação individual.',12.9,10.1,2,2,100,14,2,1,0,2],
+    ['Marcação','Ajustar distância, orientação corporal e tempo de aproximação.',11.7,9.8,2,2,100,13,1,2,0,1],
+    ['Passe sob pressão','Manter qualidade do passe com menor tempo para decidir.',14.6,10.8,2,2,100,15,2,1,0,2],
+    ['Finalização','Selecionar melhor gesto e zona de finalização.',11.2,9.5,2,1,50,11,1,0,1,3],
+    ['Cobertura defensiva','Dar suporte ao companheiro e proteger espaço vulnerável.',16.0,10.7,2,2,100,16,2,1,0,1],
+    ['Mobilidade ofensiva','Criar linha de passe e ocupar espaços com melhor timing.',13.8,10.2,2,2,100,14,1,2,0,2],
+    ['Tomada de decisão','Escolher com mais rapidez entre conduzir, passar ou finalizar.',12.7,9.7,2,2,100,13,2,2,0,2]
   ];
-  const semanas=weeks.map((w,i)=>({ano:2026,mes:i<2?7:i<6?8:9,semana:i+1,turma:'19h',tema:w[0],objetivo:w[1],treinos:w[4],presencas:w[5],frequencia:w[6],pontos_total:w[7],media_atleta:w[2],ctp:w[8],ctd:w[9],descontos:w[10],media_turma:w[3],diferenca_turma:+(w[2]-w[3]).toFixed(2),primeira_data:`2026-${String(i<2?7:i<6?8:9).padStart(2,'0')}-${String(20+i*3).padStart(2,'0')}`,ultima_data:`2026-${String(i<2?7:i<6?8:9).padStart(2,'0')}-${String(22+i*3).padStart(2,'0')}`}));
-  return {ok:true,schema_version:'demo',gerado_em:new Date().toISOString(),atleta:{id:'DEMO-EVE-001',nome:'Atleta Scandian',turma:'19h'},periodo:{dias:60,inicio:'2026-07-20',fim:'2026-09-13'},totais:{treinos_registrados:16,presencas:15,frequencia:93.8,pontos_total:59,media_pontos_presenca:12.96,ctp:12,ctd:10,descontos:1},semanas};
+  const ctxKeys=['ludica','explicacao','fundamental','suporte','especifica'];
+  const makeCtx=(i)=>{
+    const a={
+      ludica:{ctp:1+(i%2),ctd:0,descontos:0,gols:i%3===0?1:0,pontos:1+(i%2)},
+      explicacao:{ctp:0,ctd:1+(i%2),descontos:0,gols:0,pontos:3*(1+(i%2))},
+      fundamental:{ctp:2+(i%3),ctd:i%2,descontos:0,gols:1+(i%2),pontos:2+(i%3)+3*(i%2)},
+      suporte:{ctp:1+(i%2),ctd:i%3===0?1:0,descontos:i===4?1:0,gols:i%4===0?1:0,pontos:1+(i%2)+3*(i%3===0?1:0)-(i===4?1:0)},
+      especifica:{ctp:2+(i%2),ctd:i%2,descontos:0,gols:1+(i%3===1?1:0),pontos:2+(i%2)+3*(i%2)}
+    };
+    const t={};
+    ctxKeys.forEach((k,idx)=>{const x=a[k];t[k]={ctp:x.ctp*7+idx+3,ctd:x.ctd*6+idx+1,descontos:x.descontos*3+(idx===3?2:0),gols:x.gols*5+idx%2,pontos:(x.ctp*7+idx+3)+3*(x.ctd*6+idx+1)-(x.descontos*3+(idx===3?2:0))}});
+    return {atleta:a,turma:t};
+  };
+  const semanas=weeks.map((w,i)=>({ano:2026,mes:i<2?7:i<6?8:9,semana:i+1,turma:'19h',tema:w[0],objetivo:w[1],treinos:w[4],presencas:w[5],frequencia:w[6],pontos_total:w[7],media_atleta:w[2],ctp:w[8],ctd:w[9],descontos:w[10],gols:w[11],media_turma:w[3],diferenca_turma:+(w[2]-w[3]).toFixed(2),primeira_data:`2026-${String(i<2?7:i<6?8:9).padStart(2,'0')}-${String(20+i*3).padStart(2,'0')}`,ultima_data:`2026-${String(i<2?7:i<6?8:9).padStart(2,'0')}-${String(22+i*3).padStart(2,'0')}`,contextos:makeCtx(i)}));
+  const sumPack=(side)=>{const o={};ctxKeys.forEach(k=>o[k]={ctp:0,ctd:0,descontos:0,gols:0,pontos:0});semanas.forEach(w=>ctxKeys.forEach(k=>Object.keys(o[k]).forEach(m=>o[k][m]+=n(w.contextos?.[side]?.[k]?.[m]))));return o};
+  const contextos={atleta:sumPack('atleta'),turma:sumPack('turma')};
+  const totalGoals=semanas.reduce((a,w)=>a+n(w.gols),0);
+  return {ok:true,schema_version:'demo_v4_1',gerado_em:new Date().toISOString(),atleta:{id:'DEMO-EVE-001',nome:'Atleta Scandian',turma:'19h'},periodo:{dias:60,inicio:'2026-07-20',fim:'2026-09-13'},totais:{treinos_registrados:16,presencas:15,frequencia:93.8,pontos_total:59,media_pontos_presenca:12.96,ctp:12,ctd:10,descontos:1,gols:totalGoals},contextos,semanas};
 }
 
 function renderDashboard(){
@@ -679,7 +716,6 @@ function renderDashboard(){
   const classWeekValues=weeks.map(w=>n(w.media_turma)).filter(Number.isFinite);
   const athleteAvg=athleteWeekValues.length?athleteWeekValues.reduce((a,v)=>a+v,0)/athleteWeekValues.length:0;
   const classAvg=classWeekValues.length?classWeekValues.reduce((a,v)=>a+v,0)/classWeekValues.length:0;
-  const firstName=String(d.atleta?.nome||'Atleta').trim().split(/\s+/)[0];
   const lastName=String(d.atleta?.nome||'Atleta').trim().split(/\s+/).slice(-1)[0];
   const familyLabel=`Família ${lastName}`;
   dash.innerHTML=`
@@ -688,6 +724,7 @@ function renderDashboard(){
       <div class="evoMenu">
         <button class="active" data-nav="top"><span class="evoMenuIcon">⌂</span>Início</button>
         <button data-nav="chart"><span class="evoMenuIcon">▥</span>Desempenho</button>
+        <button data-nav="contexts"><span class="evoMenuIcon">◫</span>Momentos</button>
         <button data-nav="weeks"><span class="evoMenuIcon">▦</span>Treinos</button>
         <button data-nav="glossary"><span class="evoMenuIcon">◇</span>Conceitos Táticos</button>
         <button data-nav="report"><span class="evoMenuIcon">▤</span>Relatório</button>
@@ -712,24 +749,25 @@ function renderDashboard(){
       ${evoMetric('▦','Presença',fmtPct(d.totais?.frequencia),`${fmt(d.totais?.presencas)} de ${fmt(d.totais?.treinos_registrados)} treinos`)}
       ${evoMetric('◈','CTD',fmt(d.totais?.ctd),'Conhecimento declarativo')}
       ${evoMetric('◈','CTP',fmt(d.totais?.ctp),'Conhecimento processual')}
+      ${evoMetric('⚽','Gols',fmt(d.totais?.gols||0),'Métrica separada do score','goalMetric')}
     </section>
     ${weeks.length?dashboardWithWeeks(d,evolution):emptyDashboard(d)}
-    <div class="evoFooter">Formação esportiva infantil • acompanhamento por evidências registradas nos treinos • comparação da turma sempre agregada e anônima</div>`;
+    <div class="evoFooter">Formação esportiva infantil • acompanhamento por evidências registradas nos treinos • gols apresentados separadamente do score pedagógico • comparação da turma agregada e anônima</div>`;
   $('#logoutBtn').onclick=logout;
   dash.querySelector('[data-nav="top"]')?.addEventListener('click',()=>$('#evoTop')?.scrollIntoView({behavior:'smooth'}));
   dash.querySelector('[data-nav="chart"]')?.addEventListener('click',()=>$('#chartSection')?.scrollIntoView({behavior:'smooth'}));
+  dash.querySelector('[data-nav="contexts"]')?.addEventListener('click',()=>$('#contextSection')?.scrollIntoView({behavior:'smooth'}));
   dash.querySelector('[data-nav="weeks"]')?.addEventListener('click',()=>$('#weeksSection')?.scrollIntoView({behavior:'smooth'}));
   dash.querySelector('[data-nav="glossary"]')?.addEventListener('click',()=>openGlossary('ALL'));
   dash.querySelector('[data-nav="report"]')?.addEventListener('click',()=>window.print());
   dash.querySelector('[data-nav="athlete"]')?.addEventListener('click',()=>$('#athleteCard')?.scrollIntoView({behavior:'smooth'}));
-  if(weeks.length){renderChart();renderWeekTabs();renderWeekDetail();}
+  if(weeks.length){renderChart();renderContextSection();renderWeekTabs();renderWeekDetail();}
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function evoMetric(icon,label,value,sub=''){return `<div class="evoMetric"><div class="evoMetricIcon">${icon}</div><div><div class="evoMetricLabel">${esc(label)}</div><div class="evoMetricValue">${esc(value)}${sub&&sub.startsWith('▲')?` <span class="evoMetricUp">${esc(sub)}</span>`:''}</div>${sub&&!sub.startsWith('▲')?`<div class="evoMetricSub">${esc(sub)}</div>`:''}</div></div>`}
+function evoMetric(icon,label,value,sub='',extra=''){return `<div class="evoMetric ${extra||''}"><div class="evoMetricIcon">${icon}</div><div><div class="evoMetricLabel">${esc(label)}</div><div class="evoMetricValue">${esc(value)}${sub&&sub.startsWith('▲')?` <span class="evoMetricUp">${esc(sub)}</span>`:''}</div>${sub&&!sub.startsWith('▲')?`<div class="evoMetricSub">${esc(sub)}</div>`:''}</div></div>`}
 function metric(v,l,info=false,key=''){return `<div class="metric ${info?'infoMetric':''}">${info?`<button class="infoDot" data-info="${key}" title="Entenda este indicador">i</button>`:''}<b>${esc(v)}</b><span>${esc(l)}</span></div>`}
 function emptyDashboard(d){return `<section class="section emptyState"><h2>Ainda não há histórico suficiente neste ciclo</h2><p>O acesso está correto, mas ainda não existem resumos sincronizados para este atleta nos últimos ${esc(d.periodo?.dias||60)} dias. Assim que os treinos reais forem finalizados e enviados à Central, o gráfico e as semanas aparecerão automaticamente aqui.</p></section>`}
 function dashboardWithWeeks(d,evolution){
-  const w=d.semanas||[];
   return `
   <section class="evoMiddle" id="chartSection">
     <div class="evoCard"><div class="evoChartHead"><h2 class="evoCardTitle">Evolução nas últimas semanas</h2><div class="chartLegend"><span><i class="legendDot gold"></i>${esc(d.atleta?.nome||'Atleta')}</span><span><i class="legendDot silver"></i>Média da turma</span></div></div><div id="chartWrap" class="evoChartWrap"><svg id="trendSvg" class="trendSvg" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Gráfico de evolução do atleta e média da turma"></svg><div id="chartTip" class="tooltip"></div></div></div>
@@ -737,6 +775,10 @@ function dashboardWithWeeks(d,evolution){
       <div class="evoKnowledgeBox"><div class="evoBrain">D</div><div><h3>CTD · Conhecimento Tático Declarativo</h3><p>É o conhecimento que o atleta consegue <strong>reconhecer e expressar</strong>: identificar opções, compreender situações e responder às reflexões propostas durante o treino.</p></div></div>
       <div class="evoKnowledgeBox"><div class="evoBrain">P</div><div><h3>CTP · Conhecimento Tático Processual</h3><p>É o conhecimento demonstrado <strong>na ação</strong>: perceber o que acontece e executar uma resposta adequada dentro do jogo — saber como e quando fazer.</p></div></div>
     </div>
+  </section>
+  <section class="evoContextSection" id="contextSection">
+    <div class="evoContextCard"><div id="contextDistribution"></div><div id="contextPhaseCards"></div></div>
+    <div class="evoGoalsCard" id="goalsByContext"></div>
   </section>
   <section class="evoWeeksSection" id="weeksSection"><div class="evoWeeksHead"><h2>Semanas de treino</h2><button id="openGlossaryFromWeeks">Ver todos os conceitos →</button></div><div id="weekTabs" class="evoWeekGrid"></div></section>
   <section id="weekDetail" style="display:none"></section>
@@ -760,19 +802,55 @@ function renderChart(){
     if(weeks.length>1){s+=`<polyline points="${group}" fill="none" stroke="#cbd1d7" stroke-width="4" opacity=".85" stroke-linejoin="round" stroke-linecap="round"/><polyline points="${athlete}" fill="none" stroke="#e2b94f" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>`}
     weeks.forEach((w,i)=>{const xx=x(i),ya=y(w.media_atleta),yg=y(w.media_turma);s+=`<circle class="ptG" data-i="${i}" cx="${xx}" cy="${yg}" r="7" fill="#cbd1d7" stroke="#0d1113" stroke-width="3"/><circle class="ptA" data-i="${i}" cx="${xx}" cy="${ya}" r="9" fill="#e2b94f" stroke="#0d1113" stroke-width="3"/><text x="${xx}" y="${H-42}" text-anchor="middle" fill="#d7d2ca" font-size="15" font-weight="800">Semana ${i+1}</text><text x="${xx}" y="${H-20}" text-anchor="middle" fill="#817b73" font-size="11">${esc(shortTheme(w.tema,13))}</text><circle class="hit" data-i="${i}" cx="${xx}" cy="${(ya+yg)/2}" r="34" fill="transparent" style="cursor:pointer"/>`});
     svg.innerHTML=s;
-    const show=(i,ev)=>{const w=weeks[i],rect=wrap.getBoundingClientRect();tip.innerHTML=`<b>Semana ${i+1} · ${esc(w.tema||'Tema')}</b><br><span class="muted">${fmtDate(w.primeira_data)} a ${fmtDate(w.ultima_data)}</span><br><br>Pontos registrados do atleta: <b>${fmt(w.pontos_total)}</b><br>Média do atleta: <b>${fmt(w.media_atleta)}</b><br>Média da turma: <b>${fmt(w.media_turma)}</b><br>Diferença: <b>${n(w.diferenca_turma)>=0?'+':''}${fmt(w.diferenca_turma)}</b><br>Treinos: <b>${fmt(w.treinos)}</b>`;tip.classList.add('on');const px=Math.min(Math.max(8,rect.width-270),Math.max(8,(ev?.clientX||rect.left+rect.width/2)-rect.left+10));const py=Math.max(8,(ev?.clientY||rect.top+80)-rect.top-35);tip.style.left=px+'px';tip.style.top=py+'px'};
+    const show=(i,ev)=>{const w=weeks[i],rect=wrap.getBoundingClientRect();tip.innerHTML=`<b>Semana ${i+1} · ${esc(w.tema||'Tema')}</b><br><span class="muted">${fmtDate(w.primeira_data)} a ${fmtDate(w.ultima_data)}</span><br><br>Pontos registrados do atleta: <b>${fmt(w.pontos_total)}</b><br>Média do atleta: <b>${fmt(w.media_atleta)}</b><br>Média da turma: <b>${fmt(w.media_turma)}</b><br>Diferença: <b>${n(w.diferenca_turma)>=0?'+':''}${fmt(w.diferenca_turma)}</b><br>Treinos: <b>${fmt(w.treinos)}</b><br>Gols: <b>${fmt(w.gols||0)}</b>`;tip.classList.add('on');const px=Math.min(Math.max(8,rect.width-270),Math.max(8,(ev?.clientX||rect.left+rect.width/2)-rect.left+10));const py=Math.max(8,(ev?.clientY||rect.top+80)-rect.top-35);tip.style.left=px+'px';tip.style.top=py+'px'};
     svg.querySelectorAll('.hit,.ptA,.ptG').forEach(el=>{el.addEventListener('pointerenter',ev=>show(+el.dataset.i,ev));el.addEventListener('pointermove',ev=>show(+el.dataset.i,ev));el.addEventListener('pointerleave',()=>tip.classList.remove('on'));el.addEventListener('click',ev=>{currentWeekIndex=+el.dataset.i;renderChart();renderWeekTabs();renderWeekDetail();show(+el.dataset.i,ev)})});
   }catch(err){console.error('Erro ao montar gráfico',err);svg.innerHTML=`<rect x="0" y="0" width="1000" height="420" fill="#0c1012"/><text x="500" y="205" text-anchor="middle" fill="#e45b5b" font-size="20">Não foi possível montar o gráfico.</text><text x="500" y="235" text-anchor="middle" fill="#918b82" font-size="13">${esc(err?.message||String(err))}</text>`}
 }
 
+
+const CONTEXT_ORDER=[
+  ['ludica','Lúdica'],
+  ['explicacao','Explicação'],
+  ['fundamental','Fundamental'],
+  ['suporte','Suporte'],
+  ['especifica','Específica'],
+  ['atividade','Atividade geral']
+];
+function ctxObj(root,key){return root&&root[key]&&typeof root[key]==='object'?root[key]:{}}
+function ctxMetric(c,k){return n(c?.[k])}
+function ctxRecords(c){return ctxMetric(c,'ctp')+ctxMetric(c,'ctd')+ctxMetric(c,'descontos')}
+function ctxHas(c){return ctxRecords(c)>0||ctxMetric(c,'gols')>0||ctxMetric(c,'pontos')!==0}
+function activeContextRows(pack){
+  const a=pack?.atleta||{},t=pack?.turma||{};
+  return CONTEXT_ORDER.map(([key,label])=>({key,label,a:ctxObj(a,key),t:ctxObj(t,key)})).filter(x=>ctxHas(x.a)||ctxHas(x.t));
+}
+function renderContextSection(){
+  const d=currentData||{}, rows=activeContextRows(d.contextos||{}), dist=$('#contextDistribution'), cards=$('#contextPhaseCards'), goals=$('#goalsByContext');
+  if(!dist||!cards||!goals)return;
+  if(!rows.length){
+    dist.innerHTML='<div class="evoContextHeader"><div><h2>Registros por momento do treino</h2><p>Os treinos anteriores à atualização podem não possuir separação por contexto.</p></div></div><div class="ctxEmpty">Ainda não há dados por fase neste período.</div>';
+    cards.innerHTML='';
+    goals.innerHTML='<div class="evoContextHeader"><div><h2>⚽ Gols</h2><p>Gols são contabilizados separadamente do score pedagógico.</p></div></div><div class="ctxEmpty">Nenhum dado de gols por fase disponível.</div>';
+    return;
+  }
+  const totalA=rows.reduce((z,x)=>z+ctxRecords(x.a),0), totalT=rows.reduce((z,x)=>z+ctxRecords(x.t),0);
+  dist.innerHTML=`<div class="evoContextHeader"><div><h2>Registros por momento do treino</h2><p>As barras mostram onde os registros aconteceram dentro do próprio conjunto do atleta e da turma. A comparação é percentual para não confundir o atleta individual com o total agregado da turma.</p></div><div class="ctxLegend"><span><i class="ath"></i>Atleta</span><span><i class="grp"></i>Turma</span></div></div><div class="ctxRows">${rows.map(x=>{const pa=totalA?ctxRecords(x.a)/totalA*100:0,pt=totalT?ctxRecords(x.t)/totalT*100:0;return `<div class="ctxRow"><div class="ctxName">${esc(x.label)}</div><div class="ctxBars"><div class="ctxTrack" title="Atleta ${fmt(pa)}%"><div class="ctxFill ath" style="width:${Math.max(0,Math.min(100,pa))}%"></div></div><div class="ctxTrack" title="Turma ${fmt(pt)}%"><div class="ctxFill grp" style="width:${Math.max(0,Math.min(100,pt))}%"></div></div></div><div class="ctxPct"><b>${fmt(pa)}%</b>${fmt(pt)}%</div></div>`}).join('')}</div><div class="contextDisclosure">Registro = manifestação de CTP, tentativa/acerto de CTD ou desconto de conduta. O gráfico não transforma esses registros em diagnóstico isolado de desenvolvimento.</div>`;
+  cards.innerHTML=`<div class="ctxPhaseGrid">${rows.filter(x=>x.key!=='atividade'||rows.length<6).map(x=>`<div class="ctxPhase"><h3>${esc(x.label)}</h3><div class="ctxPhaseCompare"><div class="ctxSide"><b>Atleta</b><span>CTP <strong>${fmt(ctxMetric(x.a,'ctp'))}</strong></span><span>CTD <strong>${fmt(ctxMetric(x.a,'ctd'))}</strong></span><span>−1 <strong>${fmt(ctxMetric(x.a,'descontos'))}</strong></span><span>Score <strong>${fmt(ctxMetric(x.a,'pontos'))}</strong></span><span>⚽ <strong>${fmt(ctxMetric(x.a,'gols'))}</strong></span></div><div class="ctxSide group"><b>Turma total</b><span>CTP <strong>${fmt(ctxMetric(x.t,'ctp'))}</strong></span><span>CTD <strong>${fmt(ctxMetric(x.t,'ctd'))}</strong></span><span>−1 <strong>${fmt(ctxMetric(x.t,'descontos'))}</strong></span><span>Score <strong>${fmt(ctxMetric(x.t,'pontos'))}</strong></span><span>⚽ <strong>${fmt(ctxMetric(x.t,'gols'))}</strong></span></div></div></div>`).join('')}</div>`;
+  const athleteGoals=n(d.totais?.gols),classGoals=rows.reduce((z,x)=>z+ctxMetric(x.t,'gols'),0);
+  goals.innerHTML=`<div class="evoContextHeader"><div><h2>⚽ Gols por momento</h2><p>Produção ofensiva separada do score pedagógico.</p></div></div><div class="goalTotal"><div class="goalBig"><b>${fmt(athleteGoals)}</b><span>gols do atleta</span></div><div class="goalClass"><b>${fmt(classGoals)}</b><span>gols registrados na turma</span></div></div><div class="goalPhaseList">${rows.filter(x=>ctxMetric(x.a,'gols')||ctxMetric(x.t,'gols')).map(x=>`<div class="goalPhase"><div class="goalPhaseName">${esc(x.label)}</div><div class="goalPhaseVals"><b>${fmt(ctxMetric(x.a,'gols'))}</b> atleta · ${fmt(ctxMetric(x.t,'gols'))} turma</div></div>`).join('')||'<div class="ctxEmpty">Nenhum gol registrado no período.</div>'}</div><div class="goalNote">O número de gols não altera CTD, CTP ou o score pedagógico. Ele é exibido para permitir que a família diferencie produção ofensiva de evidências relacionadas ao tema trabalhado.</div>`;
+}
+
 function renderWeekTabs(){
   const box=$('#weekTabs'); if(!box)return;
-  box.innerHTML=(currentData.semanas||[]).map((w,i)=>{const c=findConcept(w.tema,w.objetivo);const moment=c?.moment?momentName(c.moment):(c?.suggestedMoment?momentName(c.suggestedMoment):(w.tema||'Conteúdo do treino'));return `<button class="evoWeekCard ${i===currentWeekIndex?'on':''}" data-i="${i}"><small>Semana ${i+1}<br>${fmtDate(w.primeira_data)} → ${fmtDate(w.ultima_data)}</small><div class="wMoment">${esc(moment)}</div><div class="wScores"><div>Atleta<b>${fmt(w.media_atleta)}</b></div><div>Turma<b style="color:#d0d4d8">${fmt(w.media_turma)}</b></div></div><div class="wBtn">Ver detalhes</div></button>`}).join('');
+  box.innerHTML=(currentData.semanas||[]).map((w,i)=>{const c=findConcept(w.tema,w.objetivo);const moment=c?.moment?momentName(c.moment):(c?.suggestedMoment?momentName(c.suggestedMoment):(w.tema||'Conteúdo do treino'));return `<button class="evoWeekCard ${i===currentWeekIndex?'on':''}" data-i="${i}"><small>Semana ${i+1}<br>${fmtDate(w.primeira_data)} → ${fmtDate(w.ultima_data)}</small><div class="wMoment">${esc(moment)}</div><div class="wScores"><div>Atleta<b>${fmt(w.media_atleta)}</b></div><div>Turma<b style="color:#d0d4d8">${fmt(w.media_turma)}</b></div></div><div style="margin-top:5px;color:#69dda0;font-size:8px">⚽ ${fmt(w.gols||0)} gol(s)</div><div class="wBtn">Ver detalhes</div></button>`}).join('');
   box.querySelectorAll('.evoWeekCard').forEach(b=>b.onclick=()=>{currentWeekIndex=+b.dataset.i;renderChart();renderWeekTabs();renderWeekDetail()});
   const g=$('#openGlossaryFromWeeks');if(g)g.onclick=()=>openGlossary('ALL');
 }
 function renderWeekDetail(){
-  const w=(currentData.semanas||[])[currentWeekIndex]; if(!w)return;
+  const w=(currentData.semanas||[])[currentWeekIndex], box=$('#weekDetail'); if(!w||!box)return;
+  const rows=activeContextRows(w.contextos||{});
+  box.style.display='block';
+  box.innerHTML=`<div class="weekContextWrap"><div class="weekContextHead"><div><h3>Semana ${currentWeekIndex+1} · ${esc(w.tema||'Treino')}</h3><span>${fmtDate(w.primeira_data)} a ${fmtDate(w.ultima_data)} · ${esc(w.objetivo||'Objetivo não informado')}</span></div><span>Detalhamento do atleta e turma por momento</span></div><div class="weekMetrics"><div class="weekMetric"><b>${fmt(w.pontos_total)}</b><span>pontos atleta</span></div><div class="weekMetric"><b>${fmt(w.media_atleta)}</b><span>média atleta</span></div><div class="weekMetric"><b>${fmt(w.media_turma)}</b><span>média turma</span></div><div class="weekMetric"><b>${fmt(w.ctp)}</b><span>CTP</span></div><div class="weekMetric"><b>${fmt(w.ctd)}</b><span>CTD</span></div><div class="weekMetric goal"><b>${fmt(w.gols||0)}</b><span>⚽ gols</span></div></div>${rows.length?`<div class="weekPhaseGrid">${rows.filter(x=>x.key!=='atividade'||rows.length<6).map(x=>`<div class="weekPhaseCard"><h4>${esc(x.label)}</h4><div class="athleteLine"><strong>Atleta</strong><br>CTP ${fmt(ctxMetric(x.a,'ctp'))} · CTD ${fmt(ctxMetric(x.a,'ctd'))} · −1 ${fmt(ctxMetric(x.a,'descontos'))}<br>Score ${fmt(ctxMetric(x.a,'pontos'))} · <span class="goalVal">⚽ ${fmt(ctxMetric(x.a,'gols'))}</span></div><div class="groupLine" style="margin-top:6px"><strong>Turma total</strong><br>CTP ${fmt(ctxMetric(x.t,'ctp'))} · CTD ${fmt(ctxMetric(x.t,'ctd'))} · −1 ${fmt(ctxMetric(x.t,'descontos'))}<br>Score ${fmt(ctxMetric(x.t,'pontos'))} · ⚽ ${fmt(ctxMetric(x.t,'gols'))}</div></div>`).join('')}</div>`:'<div class="ctxEmpty">Esta semana não possui dados separados por fase. Isso pode acontecer com treinos registrados antes da atualização.</div>'}</div>`;
   renderConsultant(w);
 }
 function renderConsultant(w){
